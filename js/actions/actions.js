@@ -34,6 +34,13 @@ var Actions = {
       actionType: Constants.UPDATE_USER_ID,
       userID: userID
     });
+  },
+
+  updateRating: (rating) => {
+    Dispatcher.dispatch({
+      actionType: Constants.UPDATE_RATING,
+      rating: rating
+    });
   }
 };
 

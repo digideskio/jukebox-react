@@ -6,18 +6,21 @@ class NowPlaying extends React.Component {
     if (track) {
       return this.trackInfoHTML(
         track['title'],
-        track['artist']
+        track['artist'],
+        track['rating'],
+        track['rating_class']
       )
     } else {
       return this.loadingHTML()
     }
   }
 
-  trackInfoHTML(artistName, trackTitle) {
+  trackInfoHTML(artistName, trackTitle, rating, rating_class) {
     return (
       <div>
         <h1>{ artistName }</h1>
-        <p>'{ trackTitle }'</p>
+        <p>{ trackTitle }</p>
+        <p className={rating_class}>{rating}</p>
       </div>
     );
   }

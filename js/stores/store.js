@@ -8,6 +8,7 @@ var CHANGE_EVENT = 'change';
 var defaultData = Immutable.fromJS({
   track: null,
   user_id: null,
+  rating: null,
   connection: {
     open: false,
     error_message: null,
@@ -42,6 +43,10 @@ class Store extends EventEmitter {
 
   [Constants.UPDATE_USER_ID](action) {
     this.data = this.data.set('user_id', action.userID)
+  }
+
+  [Constants.UPDATE_RATING](action) {
+    this.data = this.data.set('rating', action.rating)
   }
 
   dispatcherCallback(action) {
