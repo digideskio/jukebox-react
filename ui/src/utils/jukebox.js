@@ -1,4 +1,5 @@
 import Actions from '../actions/actions';
+import Immutable from 'immutable';
 
 class Jukebox {
   constructor(conn) {
@@ -67,11 +68,9 @@ class Jukebox {
     //   // })
     // }
 
-    // if ("playlist" in data) {
-    //   // self.setState({
-    //   //   playlist: data["playlist"]
-    //   // })
-    // }
+    if ("playlist" in data) {
+      Actions.updatePlaylist(Immutable.fromJS(data['playlist']));
+    }
 
     if ('time' in data) {
       Actions.updateTime(data.time);

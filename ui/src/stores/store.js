@@ -9,6 +9,7 @@ const defaultData = Immutable.fromJS({
   track: null,
   user_id: null,
   time: null,
+  playlist: null,
   connection: {
     open: false,
     error_message: null,
@@ -47,6 +48,10 @@ class Store extends EventEmitter {
 
   [Constants.UPDATE_TIME](action) {
     this.data = this.data.set('time', action.time);
+  }
+
+  [Constants.UPDATE_PLAYLIST](action) {
+    this.data = this.data.set('playlist', action.playlist)
   }
 
   dispatcherCallback(action) {

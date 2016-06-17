@@ -41,6 +41,13 @@ const Actions = {
       actionType: Constants.UPDATE_TIME,
       time: time
     });
+  },
+
+  updatePlaylist: (playlist) => {
+    Dispatcher.dispatch({
+      actionType: Constants.UPDATE_PLAYLIST,
+      playlist: playlist
+    });
   }
 };
 
